@@ -1,0 +1,24 @@
+{
+  "name": "imgurclone",
+  "version": "1.0.0",
+  "description": "A simple image sharing website similar to imgur",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoffeeCodeCreate/imgurClone.git"
+  },
+  "author": "Bryan Ramos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoffeeCodeCreate/imgurClone/issues"
+  },
+  "homepage": "https://github.com/CoffeeCodeCreate/imgurClone#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.4"
+  }
+}
