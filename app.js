@@ -24,6 +24,15 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 
+
+/**
+ * 
+ * Tells express to serve files form the 'public' folder
+ * 
+ */
+
+app.use(express.static("public"));
+
 //Connect to mongodb through mongoose, create a db.
 mongoose.connect("mongodb://localhost/imgur_clone");
 
@@ -50,16 +59,16 @@ app.get("/",function(req,res){
     res.render("landing");
 })
 
-app.get("/fliktur", function(req,res){
+app.get("/piktur", function(req,res){
     res.render("index");
 });
 
-app.get("/fliktur/new",function(req,res){
+app.get("/piktur/new",function(req,res){
     res.render("new");
 })
 
 
-app.get("/fliktur/:id",function(req,res){
+app.get("/piktur/:id",function(req,res){
     res.render("show");
 });
 
