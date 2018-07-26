@@ -37,10 +37,6 @@ app.use(express.static("public"));
 mongoose.connect("mongodb://localhost/imgur_clone");
 
 //schema setup
-var imagePostSchema = new mongoose.Schema({
-    title: String,
-    image: String,
-});
 
 /**
  * Creates and reads the model that will be used in the database for the entries.
@@ -52,15 +48,49 @@ var imagePostSchema = new mongoose.Schema({
  * and then uses that as the collection name. i.e.: 'imageposts'
  */
 
+var imagePostSchema = new mongoose.Schema({
+    title: String,
+    image: String,
+});
+
 var Imagepost = mongoose.model("Imagepost", imagePostSchema);
 
+/*
+    DUMMY POST USED FOR TESTING
+*/
+Imagepost.create({
+    title: "Brain Power",
+    image: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.X-J-U4R_-2NudxvBMukPugHaF1%26pid%3D15.1&f=1"
+},
+
+function(err,imagepost){
+    if(err)
+    {
+        console.log(err);
+    }
+    else
+    {
+        console.log("Newly created campground");
+        console.log(imagepost);
+    }
+});
 
 app.get("/",function(req,res){
     res.render("landing");
 })
 
 app.get("/piktur", function(req,res){
-    res.render("index");
+    //get all campgrounds from DB
+    Imagepost.find({}, function(err,allPosts){
+        if(err)
+        {
+            console.log(err);
+        }
+        else
+        {
+            res.render("index",{imageposts: allPosts}); //takes all the campgrounds from the DB
+        }
+    });
 });
 
 app.get("/piktur/new",function(req,res){
