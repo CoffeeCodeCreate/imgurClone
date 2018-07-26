@@ -39,10 +39,14 @@ nav
     line-height: 35px;
 }
 
-#addPost
+.mainButtons
 {
     background-color: #1BB76E;
     border: none;
+}
+
+#addPost
+{
     height: 35px;
     width: 129px;
 }
@@ -124,4 +128,36 @@ nav
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/*
+    LANDING SECTION STYLINGS
+*/
+
+#landingContainer
+{
+    border: solid 1px white;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    padding: 50px;
+    align-items: center;
+    justify-content: center;    
+}
+
+#landingContentContainer
+{
+    border: solid 1px white;
+}
+
+#landingHeader
+{
+    font-size: 80px;
+    margin: 50px 0;
+}
+#viewPosts
+{
+    height: 45px;
+    width: 200px;
 }
