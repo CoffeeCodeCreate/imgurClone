@@ -136,19 +136,21 @@ nav
 
 #landingContainer
 {
-    border: solid 1px white;
     display: flex;
     flex-direction: column;
     height: 100vh;
     width: 100%;
-    padding: 50px;
     align-items: center;
     justify-content: center;    
 }
 
 #landingContentContainer
 {
-    border: solid 1px white;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #34373C;
+    padding: 50px;
 }
 
 #landingHeader
@@ -160,4 +162,20 @@ nav
 {
     height: 45px;
     width: 200px;
+}
+/*
+    FOOTER STYLINGS
+*/
+
+footer
+{
+    position: absolute;
+    left: 0;
+    bottom: -50px; /* Overriding the margins set on the container */
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    background-color: #34373C;
+    color: 
 }
