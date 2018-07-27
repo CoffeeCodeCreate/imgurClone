@@ -3,10 +3,13 @@
 <div class="container">
     <h1>Add A New Image</h1>
     <div id="formContainer">
-        <form action="/>
-
+        <form action="/piktur" method="POST">
+            <input type="text" name="title" placeholder="Title">
+            <input type="text" name="image" placeholder="Image Url">
+            <button class="mainButtons" id="addNewPost">Submit</button>
         </form>
     </div>
+    <a href="/piktur">Go Back</a>
 </div>
 
 <% include partials/footer %>

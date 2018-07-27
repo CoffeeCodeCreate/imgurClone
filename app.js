@@ -55,25 +55,25 @@ var imagePostSchema = new mongoose.Schema({
 
 var Imagepost = mongoose.model("Imagepost", imagePostSchema);
 
-/*
-    DUMMY POST USED FOR TESTING
-*/
-Imagepost.create({
-    title: "Brain Power",
-    image: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.X-J-U4R_-2NudxvBMukPugHaF1%26pid%3D15.1&f=1"
-},
+// /*
+//     DUMMY POST USED FOR TESTING
+// */
+// Imagepost.create({
+//     title: "Brain Power",
+//     image: "https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.X-J-U4R_-2NudxvBMukPugHaF1%26pid%3D15.1&f=1"
+// },
 
-function(err,imagepost){
-    if(err)
-    {
-        console.log(err);
-    }
-    else
-    {
-        console.log("Newly created campground");
-        console.log(imagepost);
-    }
-});
+// function(err,imagepost){
+//     if(err)
+//     {
+//         console.log(err);
+//     }
+//     else
+//     {
+//         console.log("Newly created campground");
+//         console.log(imagepost);
+//     }
+// });
 
 app.get("/",function(req,res){
     res.render("landing");
@@ -96,6 +96,38 @@ app.get("/piktur", function(req,res){
 app.get("/piktur/new",function(req,res){
     res.render("new");
 })
+
+/*
+    POST REQUEST
+*/
+
+app.post("/piktur", function(req,res){
+    //get data from the form, in the body of the request through the form inputs name.
+    var title = req.body.title;
+    var image = req.body.image;
+    /**
+     * New post turned into an object
+     */
+    var newPost = {
+        name: name,
+        image: image
+    }
+
+    /**
+     * Insert into db, check for errors.
+     */
+    Imagepost.create(newPost, function(err, userSubmittedPosted){
+        if(err)
+        {
+            console.log(err);
+        }
+
+        else
+        {
+            res.redirect("/piktur");
+        }
+    });
+});
 
 
 app.get("/piktur/:id",function(req,res){
