@@ -1,6 +1,6 @@
 <% include partials/header %>
 
-<div class="container">
+<div class="container" id="mainFormContainer">
     <h1>Add A New Image</h1>
     <div id="formContainer">
         <form action="/piktur" method="POST">
@@ -9,7 +9,6 @@
             <button class="mainButtons" id="addNewPost">Submit</button>
         </form>
     </div>
-    <a href="/piktur">Go Back</a>
+    <a id="goBack" href="/piktur">Go Back</a>
 </div>
-
 <% include partials/footer %>

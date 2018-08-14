@@ -163,9 +163,60 @@ nav
     height: 45px;
     width: 200px;
 }
+
+/*
+    New Post page stylings
+*/
+
+
 /*
     FOOTER STYLINGS
 */
+
+#mainFormContainer
+{
+    padding: 25px;
+    text-align: center;
+    margin: 100px auto;
+    width: 50%;
+}
+
+#mainFormContainer h1
+{
+    font-size: 80px;
+}
+
+#formContainer
+{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#formContainer input
+{
+    height: 50px;
+    width: 400px;
+    display: block;
+    margin: 10px;
+    font-size: 18px;
+    padding: 10px;
+}
+
+#addNewPost
+{
+    height: 35px;
+    width: 129px;
+    font-size: 16px;
+}
+
+#goBack
+{
+    font-size: 18px;
+    color: #F2F2E0;
+    text-decoration: none;
+}
 
 footer
 {
@@ -177,5 +228,4 @@ footer
     text-align: center;
     width: 100%;
     background-color: #34373C;
-    color: 
 }

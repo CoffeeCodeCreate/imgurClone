@@ -109,7 +109,7 @@ app.post("/piktur", function(req,res){
      * New post turned into an object
      */
     var newPost = {
-        name: name,
+        title: title,
         image: image
     }
 
